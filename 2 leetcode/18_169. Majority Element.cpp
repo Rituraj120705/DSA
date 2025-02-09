@@ -24,3 +24,30 @@ n == nums.length
 Follow-up: Could you solve the problem in linear time and in O(1) space?*/
 
 
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        //int n=nums.size();
+        int value;
+        unordered_map<int,int> m;
+        for(int i=0;i<nums.size();i++){
+            if(m.count(nums[i])){
+                m[nums[i]]++;
+            }
+            else{
+                 m[nums[i]]=1;
+            }
+           
+        }
+        for(pair<int,int> p:m){
+            if(p.second > nums.size()/3){
+             value= p.first;
+            }
+        }
+        return value;
+    }
+};
+
+
+
+//
