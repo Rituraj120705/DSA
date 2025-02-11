@@ -76,3 +76,28 @@ class Solution {
             return nums;
         }
     };
+
+
+
+
+2nd methods
+
+class Solution {
+    public:
+        vector<int> rearrangeArray(vector<int>& nums) {
+            int n=nums.size();
+            int posidx=0,negidx=1;
+           vector<int>v1(n,0);
+           for(int i : nums){
+               if(i>0){
+                v1[posidx]=i;
+                posidx+=2;
+               }
+               else{
+                v1[negidx]=i;
+                negidx+=2;
+               }
+           }
+           return v1;
+        }
+    };
