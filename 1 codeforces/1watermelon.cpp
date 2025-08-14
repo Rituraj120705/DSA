@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*A. Watermelon
 time limit per test1 second
 memory limit per test64 megabytes
@@ -35,4 +36,20 @@ int main(){
         cout<<"no";
     }
     return 0;
+=======
+#include<iostream>
+using namespace std;
+
+int main(){
+    int w;
+    
+    cin>>w;
+    if(w>=4 && w % 2==0){
+        cout<<"yes";
+    }
+    else{
+        cout<<"no";
+    }
+    return 0;
+>>>>>>> f6accc8fc3ca276ba23c00f0c5e1519773122d76
 }

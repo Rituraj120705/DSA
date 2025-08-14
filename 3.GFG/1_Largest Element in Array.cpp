@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*Largest Element in Array
 Difficulty: BasicAccuracy: 67.48%Submissions: 415K+Points: 1Average Time: 20m
 
@@ -36,4 +37,44 @@ class Solution {
           }
           return lar;
       }
+=======
+/*Largest Element in Array
+Difficulty: BasicAccuracy: 67.48%Submissions: 415K+Points: 1Average Time: 20m
+
+
+
+Given an array arr[]. The task is to find the largest element and return it.
+
+Examples:
+
+Input: arr[] = [1, 8, 7, 56, 90]
+Output: 90
+Explanation: The largest element of the given array is 90.
+Input: arr[] = [5, 5, 5, 5]
+Output: 5
+Explanation: The largest element of the given array is 5.
+Input: arr[] = [10]
+Output: 10
+Explanation: There is only one element which is the largest.
+Constraints:
+1 <= arr.size()<= 106
+0 <= arr[i] <= 106
+
+*/
+
+
+
+class Solution {
+    public:
+      int largest(vector<int> &arr) {
+         // int n= arr.size();
+          int lar =arr[0];
+          for(int i=0;i<arr.size();i++){
+              if(arr[i]>=lar){
+                  lar=arr[i];
+              }
+          }
+          return lar;
+      }
+>>>>>>> f6accc8fc3ca276ba23c00f0c5e1519773122d76
   };

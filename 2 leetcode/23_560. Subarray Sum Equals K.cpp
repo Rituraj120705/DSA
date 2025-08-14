@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*560. Subarray Sum Equals K
 Solved
 Medium
@@ -45,4 +46,53 @@ class Solution {
            }
            return count;
         }
+=======
+/*560. Subarray Sum Equals K
+Solved
+Medium
+Topics
+Companies
+Hint
+Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.
+
+A subarray is a contiguous non-empty sequence of elements within an array.
+
+ 
+
+Example 1:
+
+Input: nums = [1,1,1], k = 2
+Output: 2
+Example 2:
+
+Input: nums = [1,2,3], k = 3
+Output: 2
+ 
+
+Constraints:
+
+1 <= nums.length <= 2 * 104
+-1000 <= nums[i] <= 1000
+-107 <= k <= 107*/
+
+
+
+
+class Solution {
+    public:
+        int subarraySum(vector<int>& nums, int k) {
+            int n=  nums.size();
+            int count=0;
+           for(int st=0;st<n;st++){
+            int sum=0;
+            for(int end=st ;end<n;end++){
+                sum+=nums[end];
+                if (sum==k){
+                    count++;
+                }
+            }
+           }
+           return count;
+        }
+>>>>>>> f6accc8fc3ca276ba23c00f0c5e1519773122d76
     };
