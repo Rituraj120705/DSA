@@ -45,7 +45,7 @@ public:
     }
 
 
-   nt eraseOverlapIntervals(vector<vector<int>>& intervals) {
+   int eraseOverlapIntervals(vector<vector<int>>& intervals) {
         int n = intervals.size();
         if(n==0){
             return 0;
@@ -64,6 +64,45 @@ public:
         }
         return n-count;
 
+
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+class Solution {
+public:
+   static bool compare(const vector<int>&p1,const vector<int>&p2){
+        return p1[1]< p2[1];
+    }
+
+    int eraseOverlapIntervals(vector<vector<int>>& intervals) {
+        int n = intervals.size();
+        if(n==0){
+            return 0;
+        }
+
+       // int count = 1;
+        sort(intervals.begin() , intervals.end() , compare);
+        int count = 1;
+        int currEndtime = intervals[0][1];
+
+        for(int i = 1; i<n; i++){
+            if(intervals[i][0] >= currEndtime){
+                count = count+1;
+                currEndtime = intervals[i][1];
+            }
+        }
+        return n-count;
 
     }
 };
