@@ -56,3 +56,59 @@ vector<int> dfs(vector<vector<int>>& adj){
   //return result;
 }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Solution {
+  public:
+
+    void dfshelper(int u, vector<bool> &vis, vector<int> &result, vector<vector<int>> &adj){
+        vis[u] = true;
+        result.push_back(u);
+
+        for(int i : adj[u]){
+            if(!vis[i]){
+                dfshelper(i, vis, result, adj);
+            }
+        }
+    }
+
+
+
+
+    vector<int> dfs(vector<vector<int>>& adj) {
+        int v = adj.size();
+        vector<bool> vis(v, false);
+        vector<int> result;
+
+        dfshelper(0, vis, result, adj);
+        return result;
+        
+    }
+};

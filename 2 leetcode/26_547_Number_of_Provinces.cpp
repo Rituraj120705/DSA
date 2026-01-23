@@ -63,3 +63,61 @@ public:
         
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Solution {
+public:
+
+    void dfs(int u , vector<bool> &vis, vector<vector<int>> &isConnected){
+        vis[u]=true;
+        for(int v=0; v<isConnected.size(); v++){
+            if(isConnected[u][v]==1 && !vis[v]){
+                dfs(v,vis,isConnected);
+            }
+        }
+    }
+
+    int findCircleNum(vector<vector<int>>& isConnected) {
+        int v = isConnected.size();
+        vector<bool>vis(v,false);
+        int count=0;
+
+        for(int i=0; i<v; i++){
+            if(!vis[i]){
+                dfs(i,vis,isConnected);
+                count++;
+            }
+        }
+        return count;
+    }
+};
