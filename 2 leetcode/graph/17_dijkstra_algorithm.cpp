@@ -69,7 +69,5 @@ class Solution {
             }
         }
          return dist;
-
-
     }
 };

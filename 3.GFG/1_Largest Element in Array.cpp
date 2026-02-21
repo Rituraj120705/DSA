@@ -1,3 +1,4 @@
+
 <<<<<<< HEAD
 /*Largest Element in Array
 Difficulty: BasicAccuracy: 67.48%Submissions: 415K+Points: 1Average Time: 20m
@@ -78,3 +79,53 @@ class Solution {
       }
 >>>>>>> f6accc8fc3ca276ba23c00f0c5e1519773122d76
   };
+
+
+
+
+class Solution {
+  public:
+    int largest(vector<int> &arr) {
+        int n = arr.size();
+        int max = arr[0];
+        for(int i = 0; i<n; i++){
+            if(arr[i]>max){
+                max = arr[i];
+            }
+        }
+        return max;
+        
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+

@@ -82,3 +82,57 @@ public:
     }
 >>>>>>> f6accc8fc3ca276ba23c00f0c5e1519773122d76
 };
+
+
+
+
+class Solution {
+public:
+    int findMaxConsecutiveOnes(vector<int>& nums) {
+       int n = nums.size();
+       
+       int count = 0;
+       int longest = 0;
+
+       for(int i=0; i<n; i++){
+        if(nums[i]!=1){
+            count =0;
+        }
+        else if(nums[i]==1){
+            count++;
+        }
+        longest=max(longest,count);
+       }
+       return longest;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

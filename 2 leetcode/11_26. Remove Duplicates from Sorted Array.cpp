@@ -120,3 +120,29 @@ public:
     }
 >>>>>>> f6accc8fc3ca276ba23c00f0c5e1519773122d76
 };
+
+
+
+
+
+// another best methods we have apply 
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+
+        unordered_set<int> st(nums.begin(), nums.end());
+        vector<int> uniqueElements(st.begin(), st.end());
+        sort(uniqueElements.begin(), uniqueElements.end());
+        for(int i = 0; i < uniqueElements.size(); i++) {
+            nums[i] = uniqueElements[i];
+        }
+        return uniqueElements.size();
+    }
+};
