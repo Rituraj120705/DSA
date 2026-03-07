@@ -52,7 +52,20 @@ Constraints:
 1 <= costs[i], capacity[i] <= 105
 1 <= budget <= 2 * 105*/
 
+
+
+
+
+
+
+
+
 THIS QUESTION IS TOUGH I DONOT UNDERSTAND THIS CODE, AFTER SOME TIME REVIEW THIS QEESTION AGAIN;
+
+
+
+
+
 
 
 
