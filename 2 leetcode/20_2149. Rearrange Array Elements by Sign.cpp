@@ -206,3 +206,90 @@ class Solution {
         }
 >>>>>>> f6accc8fc3ca276ba23c00f0c5e1519773122d76
     };
+
+
+
+
+
+
+class Solution {
+public:
+    vector<int> rearrangeArray(vector<int>& nums) {
+         int n = nums.size();
+
+          int posidx=0, negidx=1;
+          vector<int>v(n,0);
+
+          for(auto i : nums){
+            if(i>0){
+                v[posidx]=i;
+                posidx +=2;
+            }
+            else{
+                v[negidx]=i;
+                negidx +=2;
+            }
+          }
+          return v;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Solution {
+public:
+    vector<int> rearrangeArray(vector<int>& nums) {
+        int n = nums.size();
+        int j=0;
+        int k=0;
+        vector<int>v1,v2;
+
+        for(int i =0; i<n; i++){
+            if(nums[i]>0){
+                v1.push_back(nums[i]);
+            }
+            else{
+                v2.push_back(nums[i]);
+            }
+        }
+
+        for(int i =0; i<n; i++){
+            if(i%2==0){
+                nums[i]=v1[j];
+                j++;
+            }
+            else{
+                nums[i]=v2[k];
+                k++;
+            }
+        }
+        return nums;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+

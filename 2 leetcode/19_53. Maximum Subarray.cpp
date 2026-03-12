@@ -117,3 +117,27 @@ public:
     }
 };
 >>>>>>> f6accc8fc3ca276ba23c00f0c5e1519773122d76
+
+
+
+
+
+
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+         int n = nums.size();
+
+         int currsum = 0;
+         int maxsum = nums[0];
+         for(int i=0; i<n; i++){
+            currsum += nums[i];
+            maxsum=max(currsum,maxsum);
+
+            if(currsum<0){
+                currsum=0;
+            }
+         }
+         return maxsum;
+    }
+};

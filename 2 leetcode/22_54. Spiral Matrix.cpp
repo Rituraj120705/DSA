@@ -170,3 +170,46 @@ class Solution {
     
 >>>>>>> f6accc8fc3ca276ba23c00f0c5e1519773122d76
     
+
+
+
+
+class Solution {
+public:
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        vector<int>result;
+        int n = matrix.size();
+        int m = matrix[0].size();
+        int srow=0,erow=n-1;
+        int scol=0,ecol=m-1;
+        
+        while(srow<=erow && scol<=ecol){
+            for(int j=scol; j<=ecol; j++){
+                result.push_back(matrix[srow][j]);
+            }
+
+            for(int i =srow+1; i<=erow; i++){
+                result.push_back(matrix[i][ecol]);
+            }
+
+            for(int j=ecol-1; j>=scol; j--){
+                if(srow==erow){
+                    break;
+                }
+                result.push_back(matrix[erow][j]);
+            }
+
+            for(int i=erow-1; i>=srow+1; i--){
+                if(scol==ecol){
+
+                    break;
+                }
+                result.push_back(matrix[i][scol]);
+            }
+            srow++,erow--;
+            scol++,ecol--;
+
+        }
+        return result;
+    }
+};

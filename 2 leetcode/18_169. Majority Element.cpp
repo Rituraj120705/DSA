@@ -106,3 +106,32 @@ public:
 
 >>>>>>> f6accc8fc3ca276ba23c00f0c5e1519773122d76
 //
+
+
+
+
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int n = nums.size();
+
+        unordered_map<int,int>mp;
+
+        for(int i =0; i<n; i++){
+            if(mp.count(nums[i])){
+                mp[nums[i]]++;
+            }
+            else{
+                mp[nums[i]]=1;
+            }
+        }
+
+        for(auto u : mp){
+            if(u.second>n/2){
+                return u.first;
+
+            }
+        }
+        return -1;
+    }
+};

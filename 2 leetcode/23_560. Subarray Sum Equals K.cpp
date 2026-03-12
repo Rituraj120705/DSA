@@ -96,3 +96,54 @@ class Solution {
         }
 >>>>>>> f6accc8fc3ca276ba23c00f0c5e1519773122d76
     };
+
+
+
+
+
+class Solution {
+public:
+    int subarraySum(vector<int>& nums, int k) {
+        int n = nums.size();
+        int count =0;
+        
+        for(int st=0; st<n; st++){
+            int currsum=0; 
+            for(int end=st; end<n; end++){
+                int currsum =+ nums[end];
+
+                if(currsum==k){
+                    count++
+                }
+            }
+        }
+        return count;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

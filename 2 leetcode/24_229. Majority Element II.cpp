@@ -126,3 +126,62 @@ class Solution {
         }
 >>>>>>> f6accc8fc3ca276ba23c00f0c5e1519773122d76
     };
+
+
+
+
+class Solution {
+public:
+    vector<int> majorityElement(vector<int>& nums) {
+        int n =  nums.size();
+        vector<int>result;
+        unordered_map<int,int>m;
+
+        for(int i =0; i<n; i++){
+            if(m.count(nums[i])){
+                m[nums[i]]++;
+            }
+            else{
+                m[nums[i]]=1;
+            }
+        }
+        for(auto i : m){
+            if(i.second > n/3){
+                result.push_back(i.first);
+            }
+        }
+        return result;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
