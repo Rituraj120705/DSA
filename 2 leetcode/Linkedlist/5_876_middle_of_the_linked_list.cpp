@@ -1,4 +1,4 @@
-/*876. Middle of the Linked List
+876. Middle of the Linked List
 Solved
 Easy
 Topics
@@ -28,19 +28,27 @@ Constraints:
 
 The number of nodes in the list is in the range [1, 100].
 1 <= Node.val <= 100
-*/
+ 
 
 
 
-
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
-        
-        ListNode*slow=head;
-        ListNode*fast=head;
+        ListNode*slow = head; 
+        ListNode*fast = head;
 
-        if (head==NULL){
+        if(head==NULL){
             return NULL;
         }
 
@@ -48,6 +56,7 @@ public:
             slow=slow->next;
             fast=fast->next->next;
         }
+
         return slow;
     }
 };

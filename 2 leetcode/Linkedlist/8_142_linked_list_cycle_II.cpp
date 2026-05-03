@@ -1,4 +1,4 @@
-/*142. Linked List Cycle II
+142. Linked List Cycle II
 Solved
 Medium
 Topics
@@ -39,10 +39,9 @@ The number of the nodes in the list is in the range [0, 104].
 pos is -1 or a valid index in the linked-list.
  
 
-Follow up: Can you solve it using O(1) (i.e. constant) memory?*/
+Follow up: Can you solve it using O(1) (i.e. constant) memory?
 
-
-
+ 
 
 
 /**
@@ -53,27 +52,30 @@ Follow up: Can you solve it using O(1) (i.e. constant) memory?*/
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+
+
+
 class Solution {
 public:
     ListNode *detectCycle(ListNode *head) {
-        ListNode * slow= head;
-        ListNode * fast= head;
+        ListNode*slow=head;
+        ListNode*fast=head;
 
-        while(fast!=NULL && fast->next!= NULL){
-            slow= slow->next;
-            fast= fast->next;
+        while(fast!=NULL && fast->next!=NULL){
+            slow=slow->next;
+            fast=fast->next->next;
 
             if(slow==fast){
-                ListNode* start= head;
-                
+                ListNode*start=head;
+
                 while(start!=slow){
-                    start= start->next;
-                    slow= slow->next;
+                    start=start->next;
+                    slow=slow->next;
                     
                 }
                 return start;
             }
         }
-        return NULL;
+        return NULL ;
     }
 };
