@@ -1,8 +1,5 @@
 148. Sort List
 
-
-
-
 Medium
 Topics
 premium lock icon
