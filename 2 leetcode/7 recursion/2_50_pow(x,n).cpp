@@ -40,30 +40,28 @@ Either x is not zero or n > 0.
 
 
 
-
-
 class Solution {
 public:
     double myPow(double x, int n) {
-
-        long binaryform = n;
+        long long N = n;
         if(n<0){
-            x=1/x;
-            binaryform = -binaryform;
+            x = 1/x;
+            N=-N;
         }
-        double ans =1;
-
-
-        while(binaryform >0){
-            if(binaryform % 2 == 1){
-                ans*=x;
-            }
-            x*=x;
-            binaryform /= 2;
-        }
-
-
-        return ans;
+        return solve(x,N);
     }
-    
+
+    double solve (double x, long long n){
+        if(n==0){
+            return 1;
+        }
+
+        double halfpow = myPow(x,n/2);
+        double halfpowsquare= halfpow * halfpow;
+
+        if(n%2!=0){
+            return x * halfpowsquare;
+        }
+        return halfpowsquare;
+    }
 };
