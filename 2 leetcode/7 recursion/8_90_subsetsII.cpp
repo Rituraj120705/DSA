@@ -27,6 +27,12 @@ Constraints:
 
 
 
+
+2nd approach is best you have not to see the 1st approach
+
+
+
+
 class Solution {
 public:
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
@@ -51,5 +57,42 @@ public:
         
         ans.assign(s.begin(), s.end());
         return ans;
+    }
+};
+
+
+
+
+
+class Solution {
+public:
+
+    void backtrack(int i, int n, vector<vector<int>>& result, vector<int>& combine, vector<int>& nums){
+
+        result.push_back(combine);
+
+        for(int j =i; j<n; j++){
+            if(j>i && nums[j]==nums[j-1]){
+                continue;
+            }
+            combine.push_back(nums[j]);
+
+            backtrack(j+1,n,result,combine,nums);
+
+            combine.pop_back();
+        }
+    }
+
+
+    vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+        int n = nums.size();
+
+        sort(nums.begin(),nums.end());
+
+        vector<vector<int>> result;
+        vector<int> combine;
+
+        backtrack(0,n,result,combine,nums);
+        return result;
     }
 };

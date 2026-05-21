@@ -68,3 +68,47 @@ public:
         return result;
     }
 };
+
+
+
+
+
+
+class Solution {
+public:
+
+    void backtrack(int i, int n, vector<int>& candidates, int target, vector<vector<int>>& result,vector<int>& combine){
+
+        if(target == 0){
+            result.push_back(combine);
+        }
+        if(i>=n || target<0){
+            return;
+        }
+
+        combine.push_back(candidates[i])
+
+        backtrack(i+1,n,candidates,target-candidates[i],result,combine);
+        
+        combine.pop_back();
+
+        while(i+1 <n && candidates[i] == candidates[i+1]){
+            i++;
+        }
+        
+
+        backtrack(i+1,n,candidates,target,result,combine);
+
+    }
+
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+        int n = candidates.size();
+
+        vector<vector<int>> result;
+        vector<int>combine;
+
+        backtrack(0,n,candidates,target,result,combine);
+
+        return result;
+    }
+};

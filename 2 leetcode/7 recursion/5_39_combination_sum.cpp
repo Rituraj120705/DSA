@@ -36,12 +36,13 @@ Constraints:
 2 <= candidates[i] <= 40
 All elements of candidates are distinct.
 1 <= target <= 40*/
-class Solution {
-public:
-    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
-        
-    }
-};
+
+
+
+
+2nd soluton is best solution 
+
+
 
 class Solution {
 public:
@@ -86,5 +87,46 @@ public:
         combisum( candidates, 0, combin,result, target);
 
             return result;
+    }
+};
+
+
+
+
+
+
+class Solution {
+public:
+
+    void backtrack(int i, int n, vector<vector<int>>& result, vector<int>& combine,int target, vector<int>& candidates){
+
+        if(target==0){
+            result.push_back(combine);
+            return;
+        }
+
+        if(i>=n || target<0){
+            return;
+        }
+
+        combine.push_back(candidates[i]);
+
+        backtrack(i,n,result,combine,target-candidates[i],candidates);
+
+        combine.pop_back();
+
+        backtrack(i+1,n,result,combine,target,candidates);
+    }
+
+
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        int n = candidates.size();
+        vector<vector<int>> result;
+
+        vector<int>combine;
+
+        backtrack(0,n,result,combine,target,candidates);
+
+        return result;
     }
 };
