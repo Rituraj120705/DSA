@@ -32,6 +32,11 @@ digits[i] is a digit in the range ['2', '9'].
 
 
 
+
+both the approach is best so you have to use both of this approach
+
+
+
 class Solution {
 public:
 
@@ -86,3 +91,59 @@ In general, subtracting '0' converts a digit character into its integer value.
 '3' - '0' = 3
 
 '7' - '0' = 7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Solution {
+public:
+
+    void backtrack(int i, string digits, vector<string>& map, vector<string>& result, string word){
+        if(i==digits.length()){
+            result.push_back(word);
+            return;
+        }
+
+        int digit = digits[i]-'0';
+        string letters = map[digit];
+
+        for(char ch : letters){
+
+            word.push_back(ch);
+
+            backtrack(i+1,digits,map,result,word);
+
+            word.pop_back();
+
+        }
+
+
+    }
+
+
+
+    vector<string> letterCombinations(string digits) {
+        vector<string>result;
+
+        vector<string>map = {"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+
+        if(digits.empty()){
+            return result;
+        }
+
+        backtrack(0,digits,map,result,"");
+
+        return result;
+    }
+};
