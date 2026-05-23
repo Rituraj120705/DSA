@@ -81,3 +81,8 @@ SELECT
 FROM Person As p
 LEFT JOIN Address AS a
 ON p.personId = a.personId;
+
+
+
+
+select p.firstName,p.lastName,ad.city,ad.state from person as p LEFT JOIN address as ad ON p.personId = ad.personId;

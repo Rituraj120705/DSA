@@ -84,3 +84,17 @@ The unique ID of Jonathan is 1.
 
 
 SELECT eu.unique_id,e.name FROM employees AS e LEFT JOIN employeeUNI AS eu ON e.id = eu.id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+select eu.unique_id,e.name from employees as e LEFT JOIN employeeUNI as eu ON e.id = eu.id;

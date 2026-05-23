@@ -54,3 +54,24 @@ Tweet 2 has length = 33. It is an invalid tweet.*/
 
 
 SELECT tweet_id FROM tweets WHERE CHAR_LENGTH(content) > 15;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+select tweet_id from tweets where CHAR_LENGTH(content)>15;

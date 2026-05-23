@@ -57,3 +57,20 @@ Output:
 
 
 SELECT DISTINCT author_id AS id FROM views AS v WHERE author_id = viewer_id ORDER BY id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+select distinct author_id as id from views as v where author_id = viewer_id ORDER BY id; 

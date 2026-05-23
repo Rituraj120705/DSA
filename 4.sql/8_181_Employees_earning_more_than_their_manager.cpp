@@ -49,3 +49,17 @@ Output:
 Explanation: Joe is the only employee who earns more than his manager.*/
 
 SELECT e.name AS Employee FROM Employee e JOIN Employee m ON e.managerId = m.id WHERE e.salary > m.salary;
+
+
+
+
+
+
+
+
+
+
+
+
+
+select e.name as employee from employee as e INNER JOIN employee as m ON m.id = e.managerId where e.salary>m.salary;
