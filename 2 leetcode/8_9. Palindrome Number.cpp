@@ -38,8 +38,7 @@ public:
         int original=x;
        int rev_num=0;
       while(x!=0){
-        if((rev_num > INT_MAX / 10 )|| (rev_num< INT_MIN /10)) {  //here this is a overflow condition 
-         return 0;
+        if((rev_num > INT_MAX / 10 )|| (rev_num< INT_MIN /10)) {
          return 0;
           }
         int last_digit = x % 10;
@@ -54,6 +53,7 @@ public:
       return false;
       }
     }
+};
 =======
 /*Given an integer x, return true if x is a 
 palindrome
@@ -84,7 +84,6 @@ Constraints:
 
 
 
-
 class Solution {
 public:
     bool isPalindrome(int x) {
@@ -94,8 +93,7 @@ public:
         int original=x;
        int rev_num=0;
       while(x!=0){
-        if((rev_num > INT_MAX / 10 )|| (rev_num< INT_MIN /10)) {  //here this is a overflow condition 
-         return 0;
+        if((rev_num > INT_MAX / 10 )|| (rev_num< INT_MIN /10)) {
          return 0;
           }
         int last_digit = x % 10;
@@ -110,5 +108,6 @@ public:
       return false;
       }
     }
+};
 >>>>>>> f6accc8fc3ca276ba23c00f0c5e1519773122d76
 };
